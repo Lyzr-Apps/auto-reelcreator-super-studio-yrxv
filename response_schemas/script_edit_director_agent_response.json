@@ -1,0 +1,78 @@
+{
+  "agent_name": "Script & Edit Director Agent",
+  "agent_id": "6999690f82d9195c9e524b9b",
+  "description": "Viral short-form video scriptwriter and editing director that creates complete production scripts with hooks, scene breakdowns, B-roll cues, text overlay directions, music/pacing notes, and CTA placements for TikTok, Instagram Reels, and YouTube Shorts.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "videos": [
+      {
+        "video_number": "number",
+        "title": "string",
+        "topic_tag": "string",
+        "hook": "string",
+        "total_duration_seconds": "number",
+        "platform_target": "string",
+        "aspect_ratio": "string",
+        "scenes": [
+          {
+            "scene_number": "number",
+            "duration_seconds": "number",
+            "voiceover_text": "string",
+            "visual_description": "string",
+            "text_overlay": "string",
+            "b_roll_cue": "string",
+            "transition": "string",
+            "camera_direction": "string"
+          }
+        ],
+        "music_direction": {
+          "style": "string",
+          "bpm": "string",
+          "energy_progression": "string"
+        },
+        "cta": {
+          "text": "string",
+          "placement": "string",
+          "timing": "string"
+        }
+      }
+    ]
+  },
+  "example_response": {
+    "videos": [
+      {
+        "video_number": 0,
+        "title": "sample string",
+        "topic_tag": "sample string",
+        "hook": "sample string",
+        "total_duration_seconds": 0,
+        "platform_target": "sample string",
+        "aspect_ratio": "sample string",
+        "scenes": [
+          {
+            "scene_number": 0,
+            "duration_seconds": 0,
+            "voiceover_text": "sample string",
+            "visual_description": "sample string",
+            "text_overlay": "sample string",
+            "b_roll_cue": "sample string",
+            "transition": "sample string",
+            "camera_direction": "sample string"
+          }
+        ],
+        "music_direction": {
+          "style": "sample string",
+          "bpm": "sample string",
+          "energy_progression": "sample string"
+        },
+        "cta": {
+          "text": "sample string",
+          "placement": "sample string",
+          "timing": "sample string"
+        }
+      }
+    ]
+  }
+}

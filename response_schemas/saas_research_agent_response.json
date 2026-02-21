@@ -1,0 +1,100 @@
+{
+  "agent_name": "SaaS Research Agent",
+  "agent_id": "6999690f82d9195c9e524b99",
+  "description": "SaaS product researcher and trend analyst that uses Perplexity's built-in web search to find the latest product updates, user reviews, competitor comparisons, industry trends, and viral content angles for video content creation.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "product_updates": [
+      {
+        "title": "string",
+        "detail": "string",
+        "source": "string"
+      }
+    ],
+    "user_sentiment": [
+      {
+        "quote": "string",
+        "source": "string",
+        "sentiment": "string"
+      }
+    ],
+    "competitor_landscape": [
+      {
+        "competitor": "string",
+        "comparison": "string"
+      }
+    ],
+    "industry_trends": [
+      {
+        "trend": "string",
+        "relevance": "string"
+      }
+    ],
+    "use_cases": [
+      {
+        "title": "string",
+        "description": "string"
+      }
+    ],
+    "pain_points": [
+      {
+        "problem": "string",
+        "solution": "string"
+      }
+    ],
+    "viral_angles": [
+      {
+        "angle": "string",
+        "hook_idea": "string"
+      }
+    ]
+  },
+  "example_response": {
+    "product_updates": [
+      {
+        "title": "sample string",
+        "detail": "sample string",
+        "source": "sample string"
+      }
+    ],
+    "user_sentiment": [
+      {
+        "quote": "sample string",
+        "source": "sample string",
+        "sentiment": "sample string"
+      }
+    ],
+    "competitor_landscape": [
+      {
+        "competitor": "sample string",
+        "comparison": "sample string"
+      }
+    ],
+    "industry_trends": [
+      {
+        "trend": "sample string",
+        "relevance": "sample string"
+      }
+    ],
+    "use_cases": [
+      {
+        "title": "sample string",
+        "description": "sample string"
+      }
+    ],
+    "pain_points": [
+      {
+        "problem": "sample string",
+        "solution": "sample string"
+      }
+    ],
+    "viral_angles": [
+      {
+        "angle": "sample string",
+        "hook_idea": "sample string"
+      }
+    ]
+  }
+}

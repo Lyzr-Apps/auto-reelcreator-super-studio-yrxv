@@ -1,0 +1,42 @@
+{
+  "agent_name": "Visual Asset Generator Agent",
+  "agent_id": "69996934deebc613f158666b",
+  "description": "Visual storyboard artist and thumbnail designer that generates thumbnail images and scene-by-scene visual storyboard frames for viral short-form videos based on approved scripts and editing directions.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "video_number": "number",
+    "video_title": "string",
+    "thumbnail_description": "string",
+    "scene_frames": [
+      {
+        "scene_number": "number",
+        "frame_description": "string",
+        "visual_style_notes": "string"
+      }
+    ],
+    "overall_visual_direction": "string"
+  },
+  "example_response": {
+    "video_number": 0,
+    "video_title": "sample string",
+    "thumbnail_description": "sample string",
+    "scene_frames": [
+      {
+        "scene_number": 0,
+        "frame_description": "sample string",
+        "visual_style_notes": "sample string"
+      }
+    ],
+    "overall_visual_direction": "sample string"
+  },
+  "has_module_outputs": true,
+  "module_outputs_example": {
+    "artifact_files": [
+      {
+        "file_url": "https://example.com/image.png"
+      }
+    ]
+  }
+}

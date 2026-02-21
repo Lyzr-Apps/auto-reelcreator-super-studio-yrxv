@@ -1,0 +1,95 @@
+{
+  "workflow": {
+    "name": "SaaS Viral Video Creator",
+    "description": "Automated pipeline that researches SaaS products, creates viral short-form video scripts with full production details, and generates visual storyboard assets.",
+    "nodes": [
+      {
+        "id": "input_node",
+        "type": "Input",
+        "label": "User SaaS Config",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "manager_agent",
+        "type": "Agent",
+        "label": "Video Production Manager",
+        "nodeCategory": "agent",
+        "agent_id": "69996933e3502b03b1c6e0b1",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.3,
+        "top_p": 1,
+        "is_manager": true,
+        "managed_agents": [
+          "6999690f82d9195c9e524b99",
+          "6999690f82d9195c9e524b9b"
+        ]
+      },
+      {
+        "id": "research_agent",
+        "type": "Agent",
+        "label": "SaaS Research Agent",
+        "nodeCategory": "agent",
+        "agent_id": "6999690f82d9195c9e524b99",
+        "provider": "Perplexity",
+        "model": "sonar-pro",
+        "temperature": 0.2,
+        "top_p": 1,
+        "is_sub_agent": true
+      },
+      {
+        "id": "script_agent",
+        "type": "Agent",
+        "label": "Script & Edit Director Agent",
+        "nodeCategory": "agent",
+        "agent_id": "6999690f82d9195c9e524b9b",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "is_sub_agent": true
+      },
+      {
+        "id": "visual_agent",
+        "type": "Agent",
+        "label": "Visual Asset Generator Agent",
+        "nodeCategory": "agent",
+        "agent_id": "69996934deebc613f158666b",
+        "provider": "Google",
+        "model": "gemini-2.5-pro",
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "has_image_output": true,
+        "image_output_config": {
+          "model": "dall-e-3"
+        }
+      },
+      {
+        "id": "scheduler_node",
+        "type": "Scheduler",
+        "label": "Scheduled: Daily at 8:00 AM EST",
+        "nodeCategory": "conditional",
+        "schedule_id": "6999693e399dfadeac37e371",
+        "cron_expression": "0 8 * * *",
+        "timezone": "America/New_York"
+      },
+      {
+        "id": "output_node",
+        "type": "Output",
+        "label": "Video Production Package",
+        "nodeCategory": "end"
+      }
+    ],
+    "edges": [
+      { "source": "input_node", "target": "manager_agent" },
+      { "source": "scheduler_node", "target": "manager_agent" },
+      { "source": "manager_agent", "target": "research_agent" },
+      { "source": "manager_agent", "target": "script_agent" },
+      { "source": "research_agent", "target": "manager_agent" },
+      { "source": "script_agent", "target": "manager_agent" },
+      { "source": "manager_agent", "target": "output_node" },
+      { "source": "output_node", "target": "visual_agent" },
+      { "source": "visual_agent", "target": "output_node" }
+    ]
+  }
+}
