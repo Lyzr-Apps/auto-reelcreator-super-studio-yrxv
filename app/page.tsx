@@ -132,81 +132,84 @@ interface HistoryEntry {
 // Sample Data
 // ---------------------------------------------------------------------------
 
-const SAMPLE_SETTINGS: SettingsData = {
-  productName: 'FlowSync',
-  productUrl: 'https://flowsync.io',
-  keyFeatures: ['Real-time collaboration', 'AI-powered workflows', 'Seamless integrations', 'Custom dashboards'],
-  targetAudience: 'SaaS founders, product managers, and startup teams',
-  brandVoice: 'Confident, innovative, approachable',
-  contentPillars: ['Features', 'Use Cases', 'Trends'],
-  platformTargets: ['TikTok', 'Instagram Reels'],
+const DEFAULT_SETTINGS: SettingsData = {
+  productName: 'Emergent',
+  productUrl: 'https://emergent.sh',
+  keyFeatures: ['AI-powered app builder', 'No coding required', 'Visual interface', 'Rapid app development'],
+  targetAudience: 'Non-technical entrepreneurs, startup founders, small business owners, and teams looking to build apps without developers',
+  brandVoice: 'Empowering, modern, accessible, bold',
+  contentPillars: ['Features', 'Use Cases', 'Problem-Solution'],
+  platformTargets: ['TikTok', 'Instagram Reels', 'YouTube Shorts'],
 }
+
+const SAMPLE_SETTINGS: SettingsData = { ...DEFAULT_SETTINGS }
 
 const SAMPLE_VIDEOS: VideoData[] = [
   {
     video_number: 1,
-    title: 'Why 90% of SaaS Teams Are Switching to AI Workflows',
-    topic_tag: '#AIProductivity',
-    hook: 'Your team is wasting 12 hours a week on tasks AI can handle in seconds.',
-    total_duration_seconds: 45,
+    title: 'You Do NOT Need a Developer to Build Your App',
+    topic_tag: '#NoCode',
+    hook: 'What if I told you that you could build a full app in 10 minutes with zero code?',
+    total_duration_seconds: 42,
     platform_target: 'TikTok',
     aspect_ratio: '9:16',
     scenes: [
-      { scene_number: 1, duration_seconds: 5, voiceover_text: 'Your team is wasting 12 hours a week on manual tasks.', visual_description: 'Frustrated person at desk with piles of sticky notes', text_overlay: '12 HOURS WASTED', b_roll_cue: 'Time-lapse of cluttered desk', transition: 'Quick zoom', camera_direction: 'Close-up on face, pull back' },
-      { scene_number: 2, duration_seconds: 8, voiceover_text: 'But what if AI could automate your entire workflow?', visual_description: 'Sleek dashboard with AI nodes connecting', text_overlay: 'AI-Powered Workflows', b_roll_cue: 'Screen recording of FlowSync dashboard', transition: 'Slide left', camera_direction: 'Screen capture with cursor movement' },
-      { scene_number: 3, duration_seconds: 10, voiceover_text: 'FlowSync connects your tools, learns your patterns, and does the work for you.', visual_description: 'Integration icons flowing into central hub', text_overlay: 'Connect. Learn. Automate.', b_roll_cue: 'Animated integration flow', transition: 'Morph', camera_direction: 'Wide shot of integration map' },
-      { scene_number: 4, duration_seconds: 7, voiceover_text: 'Teams using FlowSync save an average of 15 hours per week.', visual_description: 'Before/after productivity comparison', text_overlay: '15 HRS SAVED / WEEK', b_roll_cue: 'Split screen comparison', transition: 'Wipe', camera_direction: 'Static comparison shot' },
+      { scene_number: 1, duration_seconds: 5, voiceover_text: 'What if I told you that you could build a full app in 10 minutes with zero code?', visual_description: 'Person staring at complex code on screen, then pushing laptop away', text_overlay: 'ZERO CODE NEEDED', b_roll_cue: 'Time-lapse of frustrated coding session', transition: 'Quick zoom', camera_direction: 'Close-up on face, dramatic pull back' },
+      { scene_number: 2, duration_seconds: 8, voiceover_text: 'Emergent lets you describe your app idea in plain English and AI builds it for you.', visual_description: 'Clean Emergent interface with text prompt being typed', text_overlay: 'Just Describe It', b_roll_cue: 'Screen recording of Emergent builder', transition: 'Slide left', camera_direction: 'Screen capture showing prompt to app flow' },
+      { scene_number: 3, duration_seconds: 10, voiceover_text: 'No frameworks. No debugging. No hiring a dev team. Just your idea turned into a real working app.', visual_description: 'Split screen: left shows traditional dev process, right shows Emergent one-step flow', text_overlay: 'Idea to App. Instantly.', b_roll_cue: 'Side-by-side comparison animation', transition: 'Morph', camera_direction: 'Wide shot comparison' },
+      { scene_number: 4, duration_seconds: 7, voiceover_text: 'Thousands of founders are already building with Emergent. Why are you still waiting?', visual_description: 'Montage of different app types built with Emergent', text_overlay: 'BUILD YOURS NOW', b_roll_cue: 'Rapid app showcase montage', transition: 'Wipe', camera_direction: 'Quick cuts between apps' },
     ],
-    music_direction: { style: 'Electronic / Lo-fi', bpm: '110', energy_progression: 'Low to High build' },
-    cta: { text: 'Try FlowSync free for 14 days', placement: 'Bottom third + pinned comment', timing: 'Last 5 seconds' },
+    music_direction: { style: 'Electronic / Trap beat', bpm: '115', energy_progression: 'Low to High build with drop at Scene 3' },
+    cta: { text: 'Try Emergent free at emergent.sh', placement: 'Bottom third + pinned comment', timing: 'Last 5 seconds' },
   },
   {
     video_number: 2,
-    title: 'Stop Using Spreadsheets for Project Management',
-    topic_tag: '#ProductivityHack',
-    hook: 'If your project management tool is a spreadsheet, we need to talk.',
-    total_duration_seconds: 38,
+    title: 'Stop Paying Developers $150/hr for Simple Apps',
+    topic_tag: '#StartupHacks',
+    hook: 'You are burning cash on developers for apps that AI can build in minutes.',
+    total_duration_seconds: 36,
     platform_target: 'Instagram Reels',
     aspect_ratio: '9:16',
     scenes: [
-      { scene_number: 1, duration_seconds: 4, voiceover_text: 'If your project management tool is a spreadsheet, we need to talk.', visual_description: 'Overwhelmed spreadsheet with red cells', text_overlay: 'STILL USING SPREADSHEETS?', b_roll_cue: 'Messy spreadsheet scroll', transition: 'Shake effect', camera_direction: 'Top-down on screen' },
-      { scene_number: 2, duration_seconds: 8, voiceover_text: 'There is a better way. FlowSync gives you custom dashboards that actually make sense.', visual_description: 'Clean, modern dashboard with charts', text_overlay: 'Custom Dashboards', b_roll_cue: 'Product demo walkthrough', transition: 'Smooth slide', camera_direction: 'Screen recording with highlights' },
-      { scene_number: 3, duration_seconds: 6, voiceover_text: 'Drag, drop, automate. It is that simple.', visual_description: 'Drag and drop workflow builder', text_overlay: 'Drag. Drop. Done.', b_roll_cue: 'Hands-on demo', transition: 'Pop zoom', camera_direction: 'Close-up on interaction' },
+      { scene_number: 1, duration_seconds: 4, voiceover_text: 'You are burning cash on developers for apps that AI can build in minutes.', visual_description: 'Money flying out of wallet with developer invoice', text_overlay: '$150/HR FOR THIS?', b_roll_cue: 'Stack of invoices being tossed', transition: 'Shake effect', camera_direction: 'Top-down dramatic reveal' },
+      { scene_number: 2, duration_seconds: 8, voiceover_text: 'Emergent is an AI app builder. Describe what you want, and watch it come to life. No code. No waiting weeks.', visual_description: 'Emergent interface building an app in real-time', text_overlay: 'AI Builds It For You', b_roll_cue: 'Product demo with live generation', transition: 'Smooth slide', camera_direction: 'Screen recording with highlights' },
+      { scene_number: 3, duration_seconds: 6, voiceover_text: 'From idea to launch in one afternoon. That is the Emergent difference.', visual_description: 'Before/after timeline: 6 weeks vs 1 afternoon', text_overlay: '6 Weeks vs 1 Afternoon', b_roll_cue: 'Animated timeline comparison', transition: 'Pop zoom', camera_direction: 'Clean infographic animation' },
     ],
-    music_direction: { style: 'Upbeat pop', bpm: '120', energy_progression: 'Medium to High' },
-    cta: { text: 'Link in bio to try FlowSync', placement: 'End card overlay', timing: 'Last 4 seconds' },
+    music_direction: { style: 'Upbeat electronic', bpm: '120', energy_progression: 'Medium to High' },
+    cta: { text: 'Link in bio - emergent.sh', placement: 'End card overlay', timing: 'Last 4 seconds' },
   },
 ]
 
 const SAMPLE_RESEARCH: ResearchSummary = {
   key_findings: [
-    'AI workflow automation market growing 34% YoY',
-    'Teams report 40% productivity increase with automation tools',
-    'Integration capabilities are the #1 requested feature',
+    'No-code app market projected to reach $65B by 2027',
+    'AI-assisted development reduces time-to-market by 80%',
+    '72% of entrepreneurs say lack of technical skills is their biggest barrier',
     'Short-form video content drives 3x more SaaS signups than blog posts',
+    'Emergent enables full app creation from natural language descriptions',
   ],
-  angles_used: ['Productivity pain point', 'Tool migration story', 'Data-driven comparison'],
-  data_sources_count: 12,
+  angles_used: ['Cost savings vs hiring devs', 'Speed to market', 'Democratizing app development'],
+  data_sources_count: 15,
 }
 
 const SAMPLE_HISTORY: HistoryEntry[] = [
   {
     id: 'hist_001',
     timestamp: '2026-02-20T14:30:00Z',
-    productName: 'FlowSync',
+    productName: 'Emergent',
     videos: SAMPLE_VIDEOS,
     researchSummary: SAMPLE_RESEARCH,
-    contentStrategyNotes: 'Focus on pain-point driven hooks. Lead with productivity stats.',
-    visualStyleRecommendations: 'Use bold text overlays with dark backgrounds. Minimal color palette with accent pops.',
+    contentStrategyNotes: 'Lead with the cost/time pain point of traditional development. Show the contrast between weeks of dev work and minutes with Emergent. Target founders and solopreneurs who feel blocked by technical barriers.',
+    visualStyleRecommendations: 'Use bold, high-contrast text overlays on dark backgrounds. Show actual product UI for credibility. Quick cuts to match the energetic no-code builder vibe.',
   },
   {
     id: 'hist_002',
     timestamp: '2026-02-19T09:15:00Z',
-    productName: 'FlowSync',
+    productName: 'Emergent',
     videos: [SAMPLE_VIDEOS[0]],
     researchSummary: SAMPLE_RESEARCH,
-    contentStrategyNotes: 'Test comparison-style content against direct product demos.',
-    visualStyleRecommendations: 'Split-screen comparisons work well for this audience segment.',
+    contentStrategyNotes: 'Test the "you don\'t need a developer" angle against the "save money" angle. Both resonate strongly with the solopreneur audience.',
+    visualStyleRecommendations: 'Split-screen before/after comparisons work well. Show the traditional dev process vs the Emergent one-prompt flow.',
   },
 ]
 
@@ -1326,18 +1329,23 @@ export default function Page() {
   const [visualLoading, setVisualLoading] = useState(false)
   const [activeAgentId, setActiveAgentId] = useState<string | null>(null)
 
-  // Load from localStorage
+  // Load from localStorage, default to Emergent settings
   useEffect(() => {
     try {
       const stored = localStorage.getItem('vvc_settings')
-      if (stored) setSettings(JSON.parse(stored))
+      if (stored) {
+        setSettings(JSON.parse(stored))
+      } else {
+        setSettings(DEFAULT_SETTINGS)
+        localStorage.setItem('vvc_settings', JSON.stringify(DEFAULT_SETTINGS))
+      }
       const storedHistory = localStorage.getItem('vvc_history')
       if (storedHistory) {
         const parsed = JSON.parse(storedHistory)
         if (Array.isArray(parsed)) setHistory(parsed)
       }
     } catch {
-      // ignore parse errors
+      setSettings(DEFAULT_SETTINGS)
     }
   }, [])
 
@@ -1555,7 +1563,7 @@ Create eye-catching visuals that match the viral short-form video style.`
             )}
             {activeScreen === 'settings' && (
               <SettingsScreen
-                settings={settings || { productName: '', productUrl: '', keyFeatures: [], targetAudience: '', brandVoice: '', contentPillars: [], platformTargets: [] }}
+                settings={settings || DEFAULT_SETTINGS}
                 onSave={saveSettings}
               />
             )}
